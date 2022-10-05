@@ -35,7 +35,10 @@ int	ft_atoi(const char *s)
 	while (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13))
 		i++;
 	if ((s[i] < 48 || s[i] > 57) && (s[i] != '-' && s[i] != '+'))
-		return (0);
+	{
+		ft_putstr_fd("Invalid map settings\n", 2);
+		exit(1);
+	}
 	ft_check(s, &i, &minus);
 	while (s[i] > 47 && s[i] < 58)
 	{
@@ -43,7 +46,7 @@ int	ft_atoi(const char *s)
 		i++;
 	}
 	if (res >= 9223372036854775808U && minus < 0)
-		return (0);
+		return (-1);
 	if (res > INT64_MAX)
 		return (-1);
 	return ((int)res * minus);

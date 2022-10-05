@@ -1,3 +1,6 @@
 .idea/
 CMakeLists.txt
 cmake-build-debug/
+test.c
+parser/a.out
+a.out
